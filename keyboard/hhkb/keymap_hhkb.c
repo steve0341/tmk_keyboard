@@ -26,7 +26,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,BSPC,  \
            FN4, A,   R,   S,   T,   D,   H,   N,   E,   I,   O,        QUOT,FN5,                \
            FN3, Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     FN3,FN0,              \
-                LALT,LGUI,          FN1,                RGUI,RALT),
+                LALT,LGUI,          FN1,                RGUI,FN7),
 
     /* Layer 1: League gamemode
      * ,-----------------------------------------------------------.
@@ -47,7 +47,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            LSFT,Z,   X,   C,   V,  B,   K,   M,   COMM,DOT, SLSH, RSFT,FN0,            \
                 NO,NO,          SPC,               NO,NO),
 
-    /* Layer 3: HHKB mode (HHKB Fn)
+    /* Layer 2: HHKB mode (HHKB Fn)
      * ,-----------------------------------------------------------.
      * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
@@ -67,6 +67,45 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            ,TRNS,TRNS,            \
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
 
+   /* Layer 3: Default Layer
+     * ,-----------------------------------------------------------.
+     * |Esc|  1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  -|  =|  \|  `|
+     * |-----------------------------------------------------------|
+     * |Tab  |  Q|  W|  E|  R|  T|  Y|  U|  I|  O|  P|  [|  ]|Backs|
+     * |-----------------------------------------------------------|
+     * |Contro|  A|  S|  D|  F|  G|  H|  J|  K|  L|  ;|  '|Enter   |
+     * |-----------------------------------------------------------|
+     * |Shift   |  Z|  X|  C|  V|  B|  N|  M|  ,|  .|  /|Shift |Fn0|
+     * `-----------------------------------------------------------'
+     *       |Alt|Gui  |         Space         |Gui  |Alt|
+     *       `-------------------------------------------'
+     */
+    KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
+           TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,BSPC,  \
+           FN9, A,   R,   S,   T,   D,   H,   N,   E,   I,   O,        QUOT,FN10,                \
+           FN3, Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     FN3,FN0,              \
+                LALT,LCTL,          FN8,                RCTL,FN7),
+
+    /* Layer 4: HHKB mode (HHKB Fn)
+     * ,-----------------------------------------------------------.
+     * |Pwr| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
+     * |-----------------------------------------------------------|
+     * |Caps |   |   |   |   |   |   |   |Psc|Slk|Pus|Up |   |Backs|
+     * |-----------------------------------------------------------|
+     * |      |VoD|VoU|Mut|   |   |  *|  /|Hom|PgU|Lef|Rig|Enter   |
+     * |-----------------------------------------------------------|
+     * |        |   |   |   |   |   |  +|  -|End|PgD|Dow|      |   |
+     * `-----------------------------------------------------------'
+     *       |   |     |                       |     |   |
+     *       `-------------------------------------------'
+     */ 
+    KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
+           CAPS,TRNS,WH_U,MS_U,WH_D,TRNS,TRNS,PGUP,UP,PGDN,TRNS, TRNS, TRNS, BSPC,      \
+           FN9,WH_L,MS_L,MS_D,MS_R,WH_R,TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,FN10,            \
+           TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, TRNS,TRNS
+           ,TRNS,TRNS,            \
+                TRNS,TRNS,          BTN1,               TRNS,TRNS),
+
 };
 
 /*
@@ -82,7 +121,11 @@ const uint16_t fn_actions[] PROGMEM = {
     [2] = ACTION_MODS_TAP_KEY(MOD_RSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_RSFT, KC_0))),    // Shift / Delete
     [3] = ACTION_MODS_TAP_KEY(MOD_LSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_LSFT, KC_9))),  // Paren / Arrow keys
     [4] = ACTION_LAYER_TAP_KEY(2, KC_BSPC),    // Backspace / Mouse
-    [5] = ACTION_LAYER_TAP_KEY(2, KC_ENT),     // Enter / Arrows
-    [6] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_BSPC)     // Enter / Arrows
+    [5] = ACTION_LAYER_TAP_KEY(2, KC_ENT),     // Enter / 
+    [6] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_BSPC),     // Enter / Arrows
+    [7] = ACTION_LAYER_TOGGLE(3),     // Layer 4
+    [8] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_SPC),     // Super / Space
+    [9] = ACTION_LAYER_TAP_KEY(2, KC_BSPC),     // Super / Space
+    [10] = ACTION_LAYER_TAP_KEY(2, KC_ENT)     // Super / Space
 
 };
