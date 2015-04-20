@@ -24,8 +24,8 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
            TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,BSPC,  \
-           FN4, A,   R,   S,   T,   D,   H,   N,   E,   I,   O,        QUOT,FN5,                \
-           FN3, Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     FN3,FN0,              \
+           FN6, A,   R,   FN5,   T,   D,   H,   N,   FN4,   I,   O,        QUOT,ENT,                \
+           FN3, Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     FN2,FN0,              \
                 LALT,LGUI,          FN1,                RGUI,FN7),
 
     /* Layer 1: League gamemode
@@ -62,7 +62,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */ 
     KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
            CAPS,TRNS,WH_U,MS_U,WH_D,TRNS,TRNS,PGUP,UP,PGDN,TRNS, TRNS, TRNS, BSPC,      \
-           FN4,WH_L,MS_L,MS_D,MS_R,WH_R,TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,FN5,            \
+           FN4,WH_L,MS_L,MS_D,MS_R,WH_R,TRNS,BTN1,TRNS,BTN2,TRNS,TRNS,FN5,            \
            LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, RSFT,TRNS
            ,TRNS,TRNS,            \
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
@@ -101,7 +101,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      */ 
     KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
            CAPS,TRNS,WH_U,MS_U,WH_D,TRNS,TRNS,PGUP,UP,PGDN,TRNS, TRNS, TRNS, BSPC,      \
-           FN9,WH_L,MS_L,MS_D,MS_R,WH_R,TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,FN10,            \
+           FN9,WH_L,MS_L,TRNS,TRNS,WH_R,TRNS,LEFT,DOWN,RGHT,TRNS,TRNS,FN10,            \
            LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, RSFT,TRNS
            ,TRNS,TRNS,            \
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
@@ -120,8 +120,8 @@ const uint16_t fn_actions[] PROGMEM = {
     [1] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_SPC),    // Control / Space
     [2] = ACTION_MODS_TAP_KEY(MOD_RSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_RSFT, KC_0))),    // Shift / Delete
     [3] = ACTION_MODS_TAP_KEY(MOD_LSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_LSFT, KC_9))),  // Paren / Arrow keys
-    [4] = ACTION_LAYER_TAP_KEY(2, KC_BSPC),    // Backspace / Mouse
-    [5] = ACTION_LAYER_TAP_KEY(2, KC_ENT),     // Enter / 
+    [4] = ACTION_LAYER_TAP_KEY(2, KC_E),    // Backspace / Mouse
+    [5] = ACTION_LAYER_TAP_KEY(4, KC_S),     // Enter / 
     [6] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_BSPC),     // Enter / Arrows
     [7] = ACTION_LAYER_TOGGLE(3),     // Layer 4
     [8] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_SPC),     // Super / Space
