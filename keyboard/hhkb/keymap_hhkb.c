@@ -11,21 +11,21 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 #endif
     // Layer 0: Linux Layer
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
-           TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,BSPC,  \
+           TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
            BSPC,A,   R,   FN10,T,   D,   H,   N,   FN11,I,   O,        QUOT,ENT,                \
            LSFT,Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     RSFT,FN0,              \
                 LALT,LGUI,          FN6,                RGUI,FN1),
 
     //Layer 1: League Layer
     KEYMAP(ESC, 1,   2,   3,   4,  5,   6,   7,   8,   9,   0,  F11, F12, INS, DEL,   \
-           TAB, Q,   W,   F,   P,  G,   J,   L,   U,   Y,   NO, NO, NO, BSPC,      \
+           TAB, Q,   W,   F,   P,  G,   J,   L,   U,   Y,   NO, NO, NO, FN12,      \
            FN7, A,   R,   S,   T,  D,   H,   N,   E,   I,   O,  NO, ENT,            \
            LSFT,Z,   X,   C,   V,  B,   K,   M,   COMM,DOT, SLSH, RSFT,FN0,            \
                 NO,NO,             SPC,                NO,NO),
 
     // Layer 2: Mac Layer
      KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
-            TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,BSPC,  \
+            TAB, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
             BSPC,A,   R,   FN10,T,   D,   H,   N,   FN11,I,   O,        QUOT,ENT,                \
             LSFT,Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     RSFT,NO,              \
                  LALT,LCTL,          FN5,                RCTL,FN1),
@@ -44,8 +44,14 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            NO,  WH_L,MS_L,TRNS,MS_R,WH_R,NO,  LEFT,DOWN,RGHT,NO,  NO,  ENT,            \
            LSFT,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  RSFT,NO, \
            NO,  NO,              \
-                NO,  NO,            BTN1,               NO,  NO)
+                NO,  NO,            BTN1,               NO,  NO),
 
+    // Layer 5: Additional Keys
+    KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
+               CAPS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PSCR,SLCK,PAUS, UP, TRNS, FN12,      \
+               TRNS,TRNS,MUTE,VOLD,VOLU,TRNS,PAST,PSLS,HOME,PGUP,LEFT,RGHT,PENT,            \
+               TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PPLS,PMNS,END, PGDN,DOWN,TRNS,TRNS,            \
+                    TRNS,TRNS,          TRNS,               TRNS,TRNS)
 };
 
 /*
@@ -56,20 +62,6 @@ const uint16_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
 #else
 const uint16_t fn_actions[] PROGMEM = {
 #endif
-    /*
-    [0] = ACTION_LAYER_TOGGLE(1),                // Layer 1
-    [1] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_SPC),    // Control / Space
-    [2] = ACTION_MODS_TAP_KEY(MOD_RSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_RSFT, KC_0))),    // Shift / Delete
-    [3] = ACTION_MODS_TAP_KEY(MOD_LSFT, ACTION_KEY(ACTION_MODS_KEY(MOD_LSFT, KC_9))),  // Paren / Arrow keys
-    [4] = ACTION_LAYER_TAP_KEY(2, KC_E),    // Backspace / Mouse
-    [5] = ACTION_LAYER_TAP_KEY(4, KC_S),     // Enter / 
-    [6] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_BSPC),     // Enter / Arrows
-    [7] = ACTION_LAYER_TOGGLE(3),     // Layer 4
-    [8] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_SPC),     // Super / Space
-    [9] = ACTION_LAYER_TAP_KEY(2, KC_BSPC),     // Super / Space
-    [10] = ACTION_LAYER_TAP_KEY(2, KC_ENT)     // Super / Space
-    [11] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_BSPC)
-    */
 
     [0] = ACTION_LAYER_TOGGLE(1),                   // League layer
     [1] = ACTION_LAYER_TOGGLE(2),                   // Mac layer
@@ -84,8 +76,8 @@ const uint16_t fn_actions[] PROGMEM = {
     // [9] = ACTION_MODS_TAP_KEY(),
 
     [10] = ACTION_LAYER_TAP_KEY(4, KC_S),           // Mouse Layer | Colemak: S    
-    [11] = ACTION_LAYER_TAP_KEY(3, KC_E)            // Arrow Layer | Colemak: E
-    // [12] = ACTION_LAYER_TAP_KEY(),
+    [11] = ACTION_LAYER_TAP_KEY(3, KC_E),           // Arrow Layer | Colemak: E
+    [12] = ACTION_LAYER_TAP_KEY(5, KC_BSPC)            // Backspace | Layer 5
     // [13] = ACTION_LAYER_TAP_KEY(),
     // [14] = ACTION_LAYER_TAP_KEY(),
 
