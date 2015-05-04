@@ -41,7 +41,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     // Layer 4: Arrow keys
     KEYMAP(PWR, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,   \
            CAPS,NO,  WH_U,MS_U,WH_D,NO,  NO,  PGUP,UP,  PGDN,NO,  NO,  NO,  BSPC,      \
-           NO,  WH_L,MS_L,TRNS,MS_R,WH_R,NO,  LEFT,DOWN,RGHT,NO,  NO,  ENT,            \
+           NO,  WH_L,MS_L,TRNS,MS_R,WH_R,WBAK,LEFT,DOWN,RGHT,WFWD,  NO,  ENT,            \
            LSFT,NO,  NO,  NO,  NO,  NO,  NO,  NO,  NO,  RSFT,NO, \
            NO,  NO,              \
                 NO,  NO,            BTN1,               NO,  NO),
