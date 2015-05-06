@@ -11,21 +11,21 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 #endif
     // Layer 0: Linux Layer
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
-           FN13, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
+           FN13,Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
            BSPC,A,   R,   FN10,T,   D,   H,   N,   FN11,I,   O,        QUOT,ENT,                \
            LSFT,Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     RSFT,FN0,              \
                 LALT,LGUI,          FN6,                RGUI,FN1),
 
     //Layer 1: League Layer
     KEYMAP(ESC, 1,   2,   3,   4,  5,   6,   7,   8,   9,   0,  F11, F12, INS, DEL,   \
-           FN13, Q,   W,   F,   P,  G,   J,   L,   U,   Y,   NO, NO, NO, FN12,      \
+           FN13,Q,   W,   F,   P,  G,   J,   L,   U,   Y,   NO, NO, NO, FN12,      \
            FN7, A,   R,   S,   T,  D,   H,   N,   E,   I,   O,  NO, ENT,            \
            LSFT,Z,   X,   C,   V,  B,   K,   M,   COMM,DOT, SLSH, RSFT,FN0,            \
                 NO,NO,             SPC,                NO,NO),
 
     // Layer 2: Mac Layer
      KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,   \
-            FN13, Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
+            FN13,Q,   W,   F,   P,   G,   J,   L,   U,   Y,   SCOLON,   LBRC,RBRC,FN12,  \
             BSPC,A,   R,   FN10,T,   D,   H,   N,   FN11,I,   O,        QUOT,ENT,                \
             LSFT,Z,   X,   C,   V,   B,   K,   M,   COMM,DOT, SLSH,     RSFT,NO,              \
                  LALT,LCTL,          FN5,                RCTL,FN1),
